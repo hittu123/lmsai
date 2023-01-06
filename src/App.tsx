@@ -43,18 +43,9 @@ function App() {
       <header>
         <div className="container">
           <div className="headings">
-            <h1>ChatGPT</h1>
+            <h1>Lawler Chat</h1>
             <p>
-              ChatGPT est une application open source qui fournit une
-              technologie conversationnelle par le biais d'un module
-              d'intelligence artificielle basé sur GPT-3. Il permet aux
-              développeurs de créer des conversations naturelles avec l'IA via
-              leurs propres interfaces graphiques et l'utilisation de la
-              puissance du modèle GPT-3 d'OpenAI. Elle offre une variété
-              d'utilisations pratiques, notamment la création de chatbots pour
-              le service client, la création de conversations naturelles pour
-              les site web et la construction d'applications conversationnelles
-              personnalisées. (PS: cette description est écrite par ChatGPT)
+              This Chatbot is based ofChatGPT. Hope this bot will help on answering day to day questions so that we can spend quality time with our teachers in class.)
             </p>
           </div>
         </div>
@@ -62,18 +53,18 @@ function App() {
 
       <div className="container">
         <div className="headings">
-          <h2>Quelle est ta question ?</h2>
+          <h2> type your question ?</h2>
           <form onSubmit={(e) => handleSubmit(e)}>
             <input
               type="text"
               onChange={(event) => handleChange(event)}
-              placeholder="Quelle est ta question ?"
+              placeholder="What are different ancient civilizations? and how old is India's civilization?"
             />
             <button
               disabled={!question || isLoading ? true : false}
               aria-busy={isLoading}
             >
-              Poser la question
+              Submit
             </button>
           </form>
         </div>
