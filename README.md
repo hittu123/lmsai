@@ -2,13 +2,24 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Initialize
-create `.env` file and add your `openAI key`
-```bash
-REACT_APP_GPT_SECRET_KEY=your_key_here
-```
+# Steps to get started with an app on your desktop 
 
-## Available Scripts
+Prepare your Mac for react and npm
+
+### `brew update`
+
+### `brew install npm`
+
+Create a Chat GPT React App
+
+### `git clone < Report Name`
+
+### `touch .env`
+
+Sign-up on ChatGPT and create API key
+update API key in .env file
+
+### `cd <App path>`
 
 In the project directory, you can run:
 
@@ -16,6 +27,3 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
