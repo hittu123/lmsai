@@ -1,0 +1,30 @@
+location /auth {  
+    auth_jwt "AI Gateway";  
+    auth_jwt_key_file /etc/nginx/jwt_keys.json;  
+}  
+
+
+
+local jwt = require("nginx_jwt")  
+local claims = jwt.extract(ngx.var.http_Authorization)  
+ngx.var.user_role = claims.role  
+
+
+
+# OPA policy isolating tenant data  
+allow {  
+    input.user.tenant == "tenant_a"  
+    input.model == "tenant_a_gpt4"  
+}  
+
+
+
+log_format ai_logs '$remote_addr - $jwt_claim_sub [$time_local] '  
+                   '"$request" $status $body_bytes_sent '  
+                   '"$upstream_response_time" "$upstream_addr"';  
+
+Why This Design Wins
+Portability: Swap AI backends via policies—no app changes.
+Governance: All rules auditable via GitOps (e.g., policy YAML in GitHub).
+Cost Control: Real-time budget enforcement per user/team.
+Battle-Tested Stack: NGINX + OPA + Kubernetes is production-ready.
